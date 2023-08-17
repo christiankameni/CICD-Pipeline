@@ -79,7 +79,7 @@ pipeline {
                 script{echo 'deploying the application...'
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                     sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
-                    sh "docker push utsavdesai26/spring-boot:${IMAGE_NAME}"
+                    sh "docker push christiankam/spring-boot:${IMAGE_NAME}"
                 }}
 
              }
@@ -90,8 +90,8 @@ pipeline {
 //                 script{
 //                     withCredentials([usernamePassword(credentialsId: 'git-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
 //                         //def encodedPassword = URLEncoder.encode("$PASSWORD",'UTF-8')
-//                         sh 'git config --global user.email "learnwithparth.in@gmail.com"'
-//                         sh 'git config --global user.name "learnwithparth"'
+//                         sh 'git config --global user.email "christiankameni@gmail.com"'
+//                         sh 'git config --global user.name "christiankameni"'
 //
 //                         sh 'git status'
 //                         sh 'git branch'
