@@ -48,7 +48,7 @@ pipeline {
                     sh 'mvn clean package'
                     def version = (readFile('pom.xml') =~ '<version>(.+)</version>')[0][2]
                     env.IMAGE_NAME = "$version-$BUILD_NUMBER"
-                    sh "docker build -t utsavdesai26/spring-boot:${IMAGE_NAME} ."
+                    sh "docker build -t christiankam/spring-boot:${IMAGE_NAME} ."
                     }
             }
         }
